@@ -15,10 +15,16 @@
     "react-dom": "^18.2.0",
     "react-json-to-csv": "^1.2.0",
     "react-scripts": "5.0.1",
-    "react-syntax-highlighter": "^15.5.0",
+    "react-syntax-highlighter": "^16.1.0",
     "react-table": "^7.8.0",
     "typescript": "^4.9.5",
     "web-vitals": "^2.1.4"
+  },
+  "overrides": {
+    "js-yaml": "^4.1.1",
+    "nth-check": "^2.1.1",
+    "postcss": "^8.4.31",
+    "webpack-dev-server": "^5.2.1"
   },
   "scripts": {
     "start": "react-scripts start",
