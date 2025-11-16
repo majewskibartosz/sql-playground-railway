@@ -38,10 +38,81 @@ View the live demo of the application here 👉 [SQL Playground](http://sql-payg
 - Using vercel to deploy this application which uses it's edge network to cache requests & improve initial load time.
 
 ## Run Application
+
+### Local Development
 - Clone the repository
 - Run npm install to install required dependencies
 - Finally, run npm start to run the application and open the browser to view the site on localhost.
 - Use Node JS version `16.17.0` to run the application on local
+
+### Docker Deployment
+
+#### Using Docker Compose (Recommended for Local)
+```bash
+# Build and run the application
+docker-compose up -d
+
+# View logs
+docker-compose logs -f
+
+# Stop the application
+docker-compose down
+```
+
+The application will be available at `http://localhost:3000`
+
+#### Using Docker directly
+```bash
+# Build the Docker image
+docker build -t sql-playground .
+
+# Run the container
+docker run -d -p 3000:80 --name sql-playground sql-playground
+
+# Stop the container
+docker stop sql-playground
+docker rm sql-playground
+```
+
+### Railway Deployment
+
+This application is configured for easy deployment on Railway.
+
+#### Deploy to Railway
+1. Install the Railway CLI:
+   ```bash
+   npm i -g @railway/cli
+   ```
+
+2. Login to Railway:
+   ```bash
+   railway login
+   ```
+
+3. Initialize a new Railway project:
+   ```bash
+   railway init
+   ```
+
+4. Deploy the application:
+   ```bash
+   railway up
+   ```
+
+5. Add a domain (optional):
+   ```bash
+   railway domain
+   ```
+
+#### Deploy via Railway Dashboard
+1. Go to [Railway](https://railway.app)
+2. Click "New Project"
+3. Select "Deploy from GitHub repo"
+4. Select this repository
+5. Railway will automatically detect the Dockerfile and deploy your application
+6. Add a custom domain in the project settings (optional)
+
+The application will be automatically built using the Dockerfile and deployed with zero configuration needed.
 
 ## 👤 **Jaynil Gaglani**
 - Portfolio: [jaynil.gaglani](https://bit.ly/jaynil-profile)
